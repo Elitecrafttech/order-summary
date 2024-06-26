@@ -4,12 +4,6 @@ function toastify(){
         text: "You clicked the button!",
         icon: "success"
       });
-}
-function cancel(){
-    Swal.fire({
-        icon: "error",
-        text: "order canceled",
-      });
       
 }
 function changeprice(){
@@ -35,8 +29,13 @@ function ok(){
     if(price <= minPrice){
         erorPrice.style.display = 'flex'
         pop.style.display = 'flex'
-    }
-
-    
-    
+    }  
+}
+function cancel(){
+    const usd = document.querySelector(".usd")
+    Swal.fire({
+        icon: "error",
+        text: "order canceled",
+      });
+      usd.textContent = '$59.9/year'      
 }
