@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body{
+      background-image: url(images/pattern-background-desktop.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: aliceblue;
+    }
+    .parent{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: whitesmoke;
+      box-shadow: 200px;
+      text-align: center;
+      gap: 30px;
+      margin-top: 150px;
+      padding: 0px 0px 30px 0px;
+      border-radius: 20px;
+      box-shadow: 3px 2px 7px gray;
+    }
+    .hero{
+      border-radius: 20px 20px 0px 0px;
+      width: 330px;
+      height: 150px;
+    }
+    .plan{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      background-color: ghostwhite;
+      width: 275px;
+      height: 65px;
+      border-radius: 10px;
+    }
+    .price{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    a{
+      color: blue;
+    }
+    button{
+      border: none;
+      color: white;
+      background-color: blue;
+      width: 230px;
+      height: 40px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px 0px rgb(134, 134, 187);
+      cursor: pointer;
+    }
+    .toastify{
+      position: absolute;
+      top: 240px;
+      bottom: 200px;
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      scale: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    @media screen and (max-width: 950px) {
+      .toastify{
+      position: absolute;
+      top: 150px;
+      bottom: 150px;
+      display: none;
+      width: 60vw;
+      font-size: x-small;
+      overflow: hidden;
+    }
+    .btn{
+      background-color: rgb(62, 62, 158);
+      color: white;
+      border: none;
+      padding: 5px 5px;
+      width: 40vw;
+    }
+    .prices{
+      width: 40vw;
+    }
+    }
+    .title{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .btn{
+      background-color: rgb(62, 62, 158);
+      color: white;
+      border: none;
+      padding: 10px 10px;
+    }
+    .eror{
+      color: red;
+      display: none;
+    }
+    .eror-price{
+      display: none;
+    }
+  </style>
+  <title>Frontend Mentor | Order summary card</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+</head>
+<body>
+    <div class="parent">
+      <img src="images/illustration-hero.svg" alt="" class="hero">
+      <h3>Order Summary</h3>
+      <p>You can now listen to millions of songs,<br> audiobooks, and podcasts on any 
+        device<br> anywhere you like!</p>
+        <div class="plan">
+          <img src="images/icon-music.svg" alt="">
+          <div class="price">
+            <h4>Annual Plan</h4>
+            <p class="usd">$59.99/year</p>
+          </div>
+          <a onclick="changeprice()" style="cursor: pointer;">Change</a>
+        </div>
+        <button onclick="toastify()">Proceed to Payment</button>
+        <h6 style="cursor: pointer ;" onclick="cancel()">Cancel Order</h6>
+    </div>
+    <div class="toastify" style="background-color: whitesmoke; box-shadow: 3px 2px 7px gray; padding: 75px; border-radius: 10px;">
+      <label class="title">change price</label>
+      <input class="prices" style="border: 2px solid blue; padding: 10px; border-radius: 10px;" type="number" required name="number">
+      <p class="eror-price">price must not be less than 20$</p>
+     <p class="eror">!this field is required</p>
+     <button class="btn" onclick="ok()">OK</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="index.js"></script>
+</body>
+</html>
